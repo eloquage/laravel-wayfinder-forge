@@ -26,10 +26,14 @@ class WayfinderForgeServiceProvider extends PackageServiceProvider
             return;
         }
 
-        $macroName = (string) config(
+        $macroName = config(
             'wayfinder-forge.route_defaults.forget_macro_name',
             'forgetTeamRouteDefaultParameters'
         );
+
+        if (! is_string($macroName) || $macroName === '') {
+            return;
+        }
 
         $defaultParameters = config(
             'wayfinder-forge.route_defaults.forget_parameters',
