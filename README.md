@@ -8,7 +8,7 @@
 
 Auto-generate strongly typed frontend SDKs from your Laravel backend routes and FormRequests.
 
-Requires PHP 8.3+, Laravel 11, 12, or 13, and `spatie/laravel-data` 4.x.
+Requires PHP 8.3+, Laravel 12 or 13, and `spatie/laravel-data` 4.x.
 
 Wayfinder Forge ensures your frontend client code stays perfectly in sync with your backend validation rules. It parses your Laravel routes, reflects on their `FormRequest` or `Spatie\Data` classes, and automatically generates a ready-to-use TypeScript SDK.
 

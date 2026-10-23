@@ -33,6 +33,7 @@ it('registers the configured URL macro for clearing defaults', function () {
         'locale' => 'pt',
     ]);
 
+    /** @phpstan-ignore staticMethod.notFound */
     URL::forgetTeamRouteDefaultParameters();
 
     $urlGenerator = URL::getFacadeRoot();
