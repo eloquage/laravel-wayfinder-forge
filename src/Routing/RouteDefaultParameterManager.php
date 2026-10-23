@@ -16,7 +16,10 @@ final class RouteDefaultParameterManager
     public static function forget(UrlGenerator $urlGenerator, array $parameters): void
     {
         $routeUrlGenerator = self::routeUrlGenerator($urlGenerator);
-        $defaults = $routeUrlGenerator?->defaultParameters ?? [];
+        $defaults = [];
+        if ($routeUrlGenerator instanceof RouteUrlGenerator) {
+            $defaults = $routeUrlGenerator->defaultParameters;
+        }
 
         foreach ($parameters as $parameter) {
             unset($defaults[$parameter]);
@@ -34,7 +37,6 @@ final class RouteDefaultParameterManager
     private static function routeUrlGenerator(UrlGenerator $urlGenerator): ?RouteUrlGenerator
     {
         $routeUrlMethod = new ReflectionMethod($urlGenerator, 'routeUrl');
-        $routeUrlMethod->setAccessible(true);
 
         $routeUrlGenerator = $routeUrlMethod->invoke($urlGenerator);
 

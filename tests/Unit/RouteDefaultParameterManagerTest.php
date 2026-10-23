@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use IllumaLaw\WayfinderForge\Routing\RouteDefaultParameterManager;
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\URL;
 
 it('forgets selected default URL parameters', function () {
@@ -13,8 +14,9 @@ it('forgets selected default URL parameters', function () {
     ]);
 
     $urlGenerator = URL::getFacadeRoot();
-
-    expect($urlGenerator)->not->toBeNull();
+    if (! ($urlGenerator instanceof UrlGenerator)) {
+        throw new RuntimeException('The URL facade must resolve a URL generator.');
+    }
 
     RouteDefaultParameterManager::forget($urlGenerator, ['team', 'current_team']);
 
@@ -31,11 +33,13 @@ it('registers the configured URL macro for clearing defaults', function () {
         'locale' => 'pt',
     ]);
 
+    /** @phpstan-ignore staticMethod.notFound */
     URL::forgetTeamRouteDefaultParameters();
 
     $urlGenerator = URL::getFacadeRoot();
-
-    expect($urlGenerator)->not->toBeNull();
+    if (! ($urlGenerator instanceof UrlGenerator)) {
+        throw new RuntimeException('The URL facade must resolve a URL generator.');
+    }
 
     expect($urlGenerator->getDefaultParameters())
         ->toHaveKey('locale', 'pt')

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace IllumaLaw\WayfinderForge\Routing;
 
-use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 final class RoutePrefixCollector
@@ -15,16 +14,20 @@ final class RoutePrefixCollector
      */
     public static function fromUris(iterable $uris): array
     {
-        /** @var Collection<int, string> $uriCollection */
-        $uriCollection = collect($uris);
+        /** @var array<string, string> $prefixes */
+        $prefixes = [];
+        foreach ($uris as $uri) {
+            $prefix = explode('/', $uri, 2)[0];
+            if ($prefix === '' || Str::contains($prefix, '{')) {
+                continue;
+            }
 
-        return $uriCollection
-            ->map(static fn (string $uri): string => explode('/', $uri)[0])
-            ->reject(static fn (string $uri): bool => Str::contains($uri, '{'))
-            ->filter(static fn (string $uri): bool => $uri !== '')
-            ->unique()
-            ->sort()
-            ->values()
-            ->toArray();
+            $prefixes[$prefix] = $prefix;
+        }
+
+        $prefixes = array_values($prefixes);
+        sort($prefixes);
+
+        return $prefixes;
     }
 }
