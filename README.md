@@ -1,10 +1,14 @@
 # Laravel Wayfinder Forge
 
+![Laravel Wayfinder Forge](art/banner.png)
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/illuma-law/laravel-wayfinder-forge.svg?style=flat-square)](https://packagist.org/packages/illuma-law/laravel-wayfinder-forge)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/eloquage/laravel-wayfinder-forge/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/eloquage/laravel-wayfinder-forge/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/illuma-law/laravel-wayfinder-forge.svg?style=flat-square)](https://packagist.org/packages/illuma-law/laravel-wayfinder-forge)
 
 Auto-generate strongly typed frontend SDKs from your Laravel backend routes and FormRequests.
+
+Requires PHP 8.3+, Laravel 12 or 13, and `spatie/laravel-data` 4.x.
 
 Wayfinder Forge ensures your frontend client code stays perfectly in sync with your backend validation rules. It parses your Laravel routes, reflects on their `FormRequest` or `Spatie\Data` classes, and automatically generates a ready-to-use TypeScript SDK.
 
@@ -26,7 +30,7 @@ composer require illuma-law/laravel-wayfinder-forge --dev
 Publish the config file:
 
 ```bash
-php artisan vendor:publish --tag="laravel-wayfinder-forge-config"
+php artisan vendor:publish --tag=wayfinder-forge-config
 ```
 
 ## Configuration
