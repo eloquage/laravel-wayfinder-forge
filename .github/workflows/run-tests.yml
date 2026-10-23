@@ -67,6 +67,9 @@ jobs:
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update --ignore-platform-reqs
           composer require "orchestra/testbench:${{ matrix.testbench }}" --dev --no-interaction --no-update --ignore-platform-reqs
+          if [ "${{ matrix.laravel }}" = "12.*" ]; then
+            composer require "orchestra/testbench-core:10.12.*" --dev --no-interaction --no-update --ignore-platform-reqs
+          fi
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction --ignore-platform-reqs
 
       - name: List Installed Dependencies
