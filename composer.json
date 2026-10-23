@@ -8,7 +8,7 @@
         "typescript",
         "sdk-generator"
     ],
-    "homepage": "https://github.com/illuma-law/laravel-wayfinder-forge",
+    "homepage": "https://github.com/eloquage/laravel-wayfinder-forge",
     "license": "MIT",
     "authors": [
         {
