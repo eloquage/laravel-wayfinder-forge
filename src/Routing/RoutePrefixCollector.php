@@ -15,8 +15,14 @@ final class RoutePrefixCollector
      */
     public static function fromUris(iterable $uris): array
     {
+        /** @var array<int, string> $uriList */
+        $uriList = [];
+        foreach ($uris as $uri) {
+            $uriList[] = $uri;
+        }
+
         /** @var Collection<int, string> $uriCollection */
-        $uriCollection = collect($uris);
+        $uriCollection = collect($uriList);
 
         return $uriCollection
             ->map(static fn (string $uri): string => explode('/', $uri)[0])

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use IllumaLaw\WayfinderForge\Routing\RouteDefaultParameterManager;
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\URL;
 
 it('forgets selected default URL parameters', function () {
@@ -13,8 +14,7 @@ it('forgets selected default URL parameters', function () {
     ]);
 
     $urlGenerator = URL::getFacadeRoot();
-
-    expect($urlGenerator)->not->toBeNull();
+    expect($urlGenerator)->toBeInstanceOf(UrlGenerator::class);
 
     RouteDefaultParameterManager::forget($urlGenerator, ['team', 'current_team']);
 
