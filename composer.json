@@ -2,7 +2,7 @@
     "name": "eloquage/laravel-wayfinder-forge",
     "description": "Auto-generate strongly typed frontend SDKs from Laravel Wayfinder routes.",
     "keywords": [
-        "illuma-law",
+        "eloquage",
         "laravel",
         "wayfinder",
         "typescript",
@@ -12,8 +12,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "illuma-law",
-            "email": "support@illuma.law",
+            "name": "Eloquage",
             "role": "Developer"
         }
     ],
