@@ -1,4 +1,4 @@
-# illuma-law/laravel-wayfinder-forge
+# eloquage/laravel-wayfinder-forge
 
 Auto-generate strongly typed TypeScript SDKs from Laravel Wayfinder routes.
 
