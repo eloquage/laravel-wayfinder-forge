@@ -2,9 +2,9 @@
 
 ![Laravel Wayfinder Forge](art/banner.png)
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/illuma-law/laravel-wayfinder-forge.svg?style=flat-square)](https://packagist.org/packages/illuma-law/laravel-wayfinder-forge)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/eloquage/laravel-wayfinder-forge.svg?style=flat-square)](https://packagist.org/packages/eloquage/laravel-wayfinder-forge)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/eloquage/laravel-wayfinder-forge/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/eloquage/laravel-wayfinder-forge/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/illuma-law/laravel-wayfinder-forge.svg?style=flat-square)](https://packagist.org/packages/illuma-law/laravel-wayfinder-forge)
+[![Total Downloads](https://img.shields.io/packagist/dt/eloquage/laravel-wayfinder-forge.svg?style=flat-square)](https://packagist.org/packages/eloquage/laravel-wayfinder-forge)
 
 Auto-generate strongly typed frontend SDKs from your Laravel backend routes and FormRequests.
 
@@ -24,7 +24,7 @@ Wayfinder Forge ensures your frontend client code stays perfectly in sync with y
 You can install the package via composer:
 
 ```bash
-composer require illuma-law/laravel-wayfinder-forge --dev
+composer require eloquage/laravel-wayfinder-forge --dev
 ```
 
 Publish the config file:

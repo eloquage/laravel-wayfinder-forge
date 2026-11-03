@@ -1,5 +1,5 @@
 {
-    "name": "illuma-law/laravel-wayfinder-forge",
+    "name": "eloquage/laravel-wayfinder-forge",
     "description": "Auto-generate strongly typed frontend SDKs from Laravel Wayfinder routes.",
     "keywords": [
         "illuma-law",
